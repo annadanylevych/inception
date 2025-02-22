@@ -3,9 +3,9 @@ FROM	debian:bullseye
 RUN	apt-get update && \
 	apt-get install mariadb-server -y
 
-COPY	./tools/50-server.cnf /etc/mysql/mariadb.conf.d/
+COPY	./conf/50-server.cnf /etc/mysql/mariadb.conf.d/
 
-COPY	./tools/script.sh
+COPY	./tools/mariadb.sh /usr/local/bin
 
-CMD	["/script.sh"]	
+CMD	["usr/local/bin/mariadb.sh"]	
 	
