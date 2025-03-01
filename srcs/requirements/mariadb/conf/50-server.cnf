@@ -1,8 +1,7 @@
-[client]
-socket = /run/mysqld/mysqld.sock
+[server]
 
 [mysqld]
-socket = /run/mysqld/mysqld.sock
+
 user                    = mysql
 pid-file                = /run/mysqld/mysqld.pid
 basedir                 = /usr
