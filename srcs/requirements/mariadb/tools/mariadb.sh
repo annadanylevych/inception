@@ -1,3 +1,4 @@
+#!/bin/bash
 service mariadb start
 
 if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
