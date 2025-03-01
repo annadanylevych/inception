@@ -9,6 +9,6 @@ if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
     mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "FLUSH PRIVILEGES;"
 fi
 
-mysqladmin -u root --password=${MYSQL_ROOT_PASSWORD} shutdown
+mysqladmin -u root -p${MYSQL_ROOT_PASSWORD} shutdown
 
 mysqld
