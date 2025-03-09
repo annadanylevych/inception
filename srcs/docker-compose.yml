@@ -42,13 +42,17 @@ volumes:
   mariadb_data:
     driver: local
     driver_opts:
-      device: "/home/apriego-/data/mysql"
+      device: "/home/adanylev/data/mysql"
       o: bind
       type: none
 
   wordpress_data:
     driver: local
     driver_opts:
-      device: "/home/apriego-/data/wordpress"
+      device: "/home/adanylev/data/wordpress"
       o: bind
       type: none
+
+networks:
+  inception:
+    driver: bridge
