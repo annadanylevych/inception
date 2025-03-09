@@ -6,7 +6,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - wp_files:/var/www/html
+      - wordpress_data:/var/www/html
     networks:
       - inception
     depends_on:
