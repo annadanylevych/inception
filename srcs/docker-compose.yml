@@ -24,9 +24,24 @@ services:
       - inception
     restart: always
 
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress/.
+    image: wordpress
+    depends_on:
+      - mariadb
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - inception
+    env_file:
+      - .env
+    restart: always
+
 volumes:
   wp_files: {}
   mariadb_data: {}
+
 networks:
   inception:
     driver: bridge
