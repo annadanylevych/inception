@@ -39,9 +39,16 @@ services:
     restart: always
 
 volumes:
-  wp_files: {}
-  mariadb_data: {}
+  mariadb_data:
+    driver: local
+    driver_opts:
+      device: "/home/apriego-/data/mysql"
+      o: bind
+      type: none
 
-networks:
-  inception:
-    driver: bridge
+  wordpress_data:
+    driver: local
+    driver_opts:
+      device: "/home/apriego-/data/wordpress"
+      o: bind
+      type: none
