@@ -2,10 +2,7 @@ all:
 	@mkdir -p /home/adanylev
 	@mkdir -p /home/adanylev/data
 	@mkdir -p /home/adanylev/data/mysql /home/adanylev/data/wordpress
-	@docker-compose -f ./srcs/docker-compose.yml up -d --build
-
-down:
-	@docker -compose -f ./srcs/docker-compose.yml down
+	@docker compose -f ./srcs/docker-compose.yml up -d --build
 
 clean:
 	@rm -rf /home/adanylev/data

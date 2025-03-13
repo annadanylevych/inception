@@ -5,7 +5,8 @@ networks:
 services:
   nginx:
     container_name: nginx
-    build: ./requirements/nginx
+    build: ./requirements/nginx/.
+    image: nginx
     restart: always
     ports:
       - "443:443"
@@ -14,11 +15,11 @@ services:
     networks:
       - inception
     depends_on:
-      - mariadb
+      - wordpress
 
   mariadb:
     container_name: mariadb
-    build: ./requirements/mariadb
+    build: ./requirements/mariadb/.
     image: mariadb
     volumes:
       - mariadb_data:/var/lib/mysql
